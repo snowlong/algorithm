@@ -21,7 +21,7 @@ def hanoi(n, from, to, aux)
     return
   end
 
-  # n-1枚目をauxへ移動させる(to経由で)
+  # n-1枚目をformからauxへ移動させる(to経由で)
   hanoi(n-1, from, aux, to)
   # 残りの円盤をfrom からto へ
   p "Move disk #{n} from peg #{from} to peg #{to}"
