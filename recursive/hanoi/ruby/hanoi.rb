@@ -15,18 +15,18 @@
 # ・ある棒の一番上の円盤を、他の棒の円盤に移動させる
 # ・小さい円盤の上に移動させてはいけない
 def hanoi(n, from, to, aux)
-  # 円盤が1枚であれば戻す
+  # 円盤が1枚であれば円盤を移動させ、処理を戻す
   if n == 1
     p "Move disk 1 from peg #{from} to peg #{to}" if (n == 1) 
     return
   end
 
-  # n-1枚目をauxへ、n枚目をtoへ移動させる
+  # n-1枚目をformからauxへ移動させる(to経由で)
   hanoi(n-1, from, aux, to)
   # 残りの円盤をfrom からto へ
   p "Move disk #{n} from peg #{from} to peg #{to}"
 
-  # n-1とn枚目をauxへ移動させる(n-1枚目をfrom経由で)
+  # n-1枚目をauxからtoへ移動させる(from経由で)
   hanoi(n-1, aux, to, from)
 
 end
